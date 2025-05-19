@@ -1,7 +1,7 @@
 # Nequi Test Application
 
 Este proyecto es una API REST desarrollada con **Spring Boot** para la gestión de productos, sucursales y franquicias. Incluye validaciones robustas para los datos de entrada utilizando anotaciones estándar de Jakarta Validation y mensajes personalizados.
-
+Link del repositorio: [https://github.com/MaxVGC/nequi-test](https://github.com/MaxVGC/nequi-test)
 ## Características
 
 - Gestión de productos, sucursales y franquicias.
