@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: local
+  application:
+    name: nequi-test
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+management:
+  health:
+    redis:
+      enabled: false
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
