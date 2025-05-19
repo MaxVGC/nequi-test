@@ -1,6 +1,8 @@
 server:
   port: 8080
 spring:
+  webflux:
+    base-path: /api
   profiles:
     active: local
   application:
