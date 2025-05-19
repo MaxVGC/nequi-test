@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "a527c729-8389-4b7f-afc0-17ac4ff651d9",
+		"name": "Nequi Technical Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39129084"
+	},
+	"item": [
+		{
+			"name": "franchises",
+			"item": [
+				{
+					"name": "Patch name",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"newName\": \"prueba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/franchises/name",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Franchise",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Prueba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/franchises",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/franchises",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get top products by subsidiary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nequi\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/franchises/top-products-by-subsidiary?franchiseId=1",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"franchises",
+								"top-products-by-subsidiary"
+							],
+							"query": [
+								{
+									"key": "franchiseId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subsidiaries",
+			"item": [
+				{
+					"name": "New Subsidiary",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hexa1\",\r\n  \"franchiseId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/subsidiaries",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"subsidiaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch name",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 13,\r\n  \"newName\": \"prueba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/subsidiaries/name",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"subsidiaries",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/subsidiaries",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"subsidiaries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "New Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"A\",\r\n  \"stock\": 12,\r\n  \"subsidiaryId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/products",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch name",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 13,\r\n  \"newName\": \"prueba\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/products/name",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/products?subsidiaryId=1&productId=1",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "subsidiaryId",
+									"value": "1"
+								},
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_SERVICE}}/api/v1/products",
+							"host": [
+								"{{URL_SERVICE}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_SERVICE",
+			"value": "http://192.168.0.10:8080",
+			"type": "default"
+		}
+	]
+}

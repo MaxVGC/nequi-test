@@ -96,6 +96,8 @@ nequi-test
 Puedes probar la API en línea usando como base la siguiente URL:
 
 [https://nequi-test-621581734134.us-central1.run.app](https://nequi-test-621581734134.us-central1.run.app)
+
+Puedes encontrar la colección de Postman para probar la API en línea en el archivo `nequi-test.postman_collection.json` en la raíz del proyecto. Importa este archivo en Postman para comenzar a probar los endpoints de la API.
 ### Consideraciones
 - La base de datos está pre-poblada con algunos datos de ejemplo.
 - La API está configurada para aceptar solicitudes CORS desde cualquier origen.
