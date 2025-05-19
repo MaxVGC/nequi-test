@@ -21,6 +21,7 @@ services:
         DB_URL: jdbc:postgresql://db:5432/mydb
         DB_USERNAME: user
         DB_PASSWORD: password
+        DB_DDL_AUTO: create-drop
     ports:
       - "8080:8080"
     networks:

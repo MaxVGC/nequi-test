@@ -11,7 +11,7 @@ spring:
     password: ${DB_PASSWORD}
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: ${DB_DDL_AUTO:validate}
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 management:
   health:
