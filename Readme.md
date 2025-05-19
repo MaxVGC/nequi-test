@@ -96,6 +96,10 @@ nequi-test
 Puedes probar la API en línea usando como base la siguiente URL:
 
 [https://nequi-test-621581734134.us-central1.run.app](https://nequi-test-621581734134.us-central1.run.app)
+### Consideraciones
+- La base de datos está pre-poblada con algunos datos de ejemplo.
+- La API está configurada para aceptar solicitudes CORS desde cualquier origen.
+- Si la aplicación tarda un poco en responder, es posible que esté iniciando debido a que se dejó un escalamiento automático. Por favor, ten paciencia.
 
 ## Documentación de la API en línea
 La documentación de la API está disponible en Swagger UI:
