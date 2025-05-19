@@ -27,6 +27,7 @@ Este proyecto es una API REST desarrollada con **Spring Boot** para la gestión 
     DB_URL= example:jdbc:postgresql://localhost:5432/nequi_test
     DB_USERNAME= tu_usuario
     DB_PASSWORD= tu_contraseña
+    DB_DDL_AUTO= update # create-drop, create, validate, none
     ```
 3. Compila y ejecuta la aplicación:
     ```sh
@@ -35,4 +36,21 @@ Este proyecto es una API REST desarrollada con **Spring Boot** para la gestión 
 4. La API estará disponible en:  
    [http://localhost:8080](http://localhost:8080)
 
+
+## Ejecución con Docker
+1. Asegúrate de tener Docker instalado y en funcionamiento.
+2. Ajusta las variables de entorno o argumentos segun sea necesarion en el archivo `docker-compose.yml`:
+    ```yaml
+    environment:
+      - DB_URL=jdbc:postgresql://db:5432/nequi_test
+      - DB_USERNAME=tu_usuario
+      - DB_PASSWORD=tu_contraseña
+      - DB_DDL_AUTO=update # create-drop, create, validate, none
+    ```
+3. Ejecuta el siguiente comando para levantar la aplicación:
+    ```sh
+    docker-compose up --build
+    ```
+4. La API estará disponible en:
+    [http://localhost:8080](http://localhost:8080)
 

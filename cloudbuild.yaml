@@ -1,0 +1,36 @@
+availableSecrets:
+    secretManager:
+        - versionName: projects/621581734134/secrets/MAVEN_REPO_ID/versions/latest
+          env: MAVEN_REPO_ID
+        - versionName: projects/621581734134/secrets/MAVEN_REPO_USER/versions/latest
+          env: MAVEN_REPO_USER
+        - versionName: projects/621581734134/secrets/MAVEN_REPO_PASS/versions/latest
+          env: MAVEN_REPO_PASS
+steps:
+    - name: "gcr.io/cloud-builders/docker"
+      entrypoint: "bash"
+      args:
+          - "-c"
+          - |
+              docker build -t gcr.io/$PROJECT_ID/$REPO_NAME .
+    - name: "gcr.io/cloud-builders/docker"
+      args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME"]
+    - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:slim"
+      entrypoint: "gcloud"
+      args:
+          - "run"
+          - "services"
+          - "update"
+          - "$_SERVICE_NAME"
+          - "--platform=managed"
+          - "--image=gcr.io/$PROJECT_ID/$REPO_NAME:latest"
+          - "--labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID"
+          - "--region=$_DEPLOY_REGION"
+          - "--quiet"
+      id: "Deploy"
+# Publicar las imágenes resultantes (opcional)
+images:
+    - "gcr.io/$PROJECT_ID/$REPO_NAME"
+
+options:
+    logging: CLOUD_LOGGING_ONLY
